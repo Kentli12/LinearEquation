@@ -7,6 +7,7 @@ public class LinearEquation {
     private int y2;
 
 
+
     /* Creates a LinearEquation object */
     public LinearEquation (int x1, int y1, int x2, int y2){
         this.x1 = x1;
@@ -22,9 +23,9 @@ public class LinearEquation {
         return distance;
     }
     public double slope(){
-        double rise = (y2 - y1);
-        double run = (x2 - x1);
-        double slope = rise/run;
+        double riseS = (y2 - y1);
+        double runS  = (x2 - x1);
+        double slope = riseS/runS;
         return slope;
     }
 
@@ -35,7 +36,9 @@ public class LinearEquation {
     }
 
     public String equation(){
-        String equation = "y "
+        String equation = ("y = " + rise + "/" + run + "x " + yIntercept());
+        return equation;
     }
+
 
 }

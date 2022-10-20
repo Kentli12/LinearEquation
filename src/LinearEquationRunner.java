@@ -32,6 +32,7 @@ public class LinearEquationRunner {
         System.out.println(equa1.distance());
         System.out.println(equa1.slope());
         System.out.println(equa1.yIntercept());
+        System.out.println(equa1.equation());
 
     }
 }
