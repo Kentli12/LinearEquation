@@ -36,8 +36,18 @@ public class LinearEquation {
     }
 
     public String equation(){
-        String equation = ("y = " + rise + "/" + run + "x " + yIntercept());
-        return equation;
+        if (slope()%1 =)
+        int rise = y2-y1;
+        int run = x2-x1;
+        double yIntcep = yIntercept();
+        if (yIntcep > 0 ){
+            String equation = ("y = " + rise + "/" + run + "x + " + yIntercept());
+            return equation;
+        }else {
+            String equation = ("y = " + rise + "/" + run + "x " + yIntercept());
+            return equation;
+        }
+
     }
 
 
