@@ -35,20 +35,39 @@ public class LinearEquation {
         return yIntercept;
     }
 
-    public String equation(){
-        if (slope()%1 =)
-        int rise = y2-y1;
-        int run = x2-x1;
+    public String equation() {
+        int rise = y2 - y1;
+        int run = x2 - x1;
         double yIntcep = yIntercept();
-        if (yIntcep > 0 ){
-            String equation = ("y = " + rise + "/" + run + "x + " + yIntercept());
-            return equation;
-        }else {
-            String equation = ("y = " + rise + "/" + run + "x " + yIntercept());
-            return equation;
+        if (slope() % 1 == 0) {
+            if (yIntcep == 0) {
+                String equation = ("y = " + slope() + "x  ");
+                return equation;
+            } else {
+                String equation = ("y = " + slope() + "x " + yIntercept());
+                return equation;
+            }
+        } else {
+                if (yIntcep == 0) {
+                    String equation = ("y = " + rise + "/" + run + "x  ");
+                    return equation;
+                } else {
+                    String equation = ("y = " + rise + "/" + run + "x " + yIntercept());
+                    return equation;
+                }
+            }
+        }
+
+        public double roundedToHundredth(double toRound){
+            return(Math.round(toRound*100)/100);
+        }
+        public String lineInfo(){
+            return ("\n"+ "The two points are: (" + x1 + ", " + y1+ ") and (" + x2 + ", " + y2 + ")"
+                    + "\n" + "The equation between these two points is: " + equation()
+                    + "\n" + "The slope of this line is: " + slope()
+                    + "\n" + "The y-intercept of the line is: " + yIntercept());
         }
 
     }
 
 
-}
