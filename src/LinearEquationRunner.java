@@ -44,8 +44,6 @@ public class LinearEquationRunner {
             double valueX = scan.nextDouble();
             System.out.println(linearEquation.coordinateForX(valueX));
         }
-
-
-
+        scan.close();
     }
 }
