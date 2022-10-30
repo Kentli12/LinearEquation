@@ -2,11 +2,15 @@ import java.util.Scanner;
 
 
 public class LinearEquationRunner {
+    public static void Start(){
+        System.out.println("Welcome!");
+    }
     public static void main (String [] args) {
         //creates the scanner
         Scanner scan = new Scanner (System.in);
+
         //welcomes the user
-        System.out.println("Welcome!");
+        Start();
 
         //gets the first coordinates and stores it as integer variables
         System.out.print("Enter coordinate 1: ");
