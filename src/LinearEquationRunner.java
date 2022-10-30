@@ -16,7 +16,7 @@ public class LinearEquationRunner {
         String stringY = userInput.substring(comma +2, userInput.length()-1);
         int x1 = Integer.parseInt(stringX);
         int y1 = Integer.parseInt(stringY);
-        System.out.println(" " + x1 + " " +y1);
+
 
         //gets the second coordinates and stores it as integer variables
         System.out.print("Enter coordinate 2: ");
@@ -26,7 +26,7 @@ public class LinearEquationRunner {
         String stringY2 = userInput2.substring(comma +2, userInput2.length()-1);
         int x2 = Integer.parseInt(stringX2);
         int y2 = Integer.parseInt(stringY2);
-        System.out.println(" " + x2 + " " +y2);
+
 
         //runs the code
         if (x2 == x1) {
