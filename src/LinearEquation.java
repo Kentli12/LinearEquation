@@ -65,7 +65,18 @@ public class LinearEquation {
                     String equation = ("y = " + rise + "/" + run + "x" + " + " + yIntercept());
                     return equation;
                 }
+            }else if (run < 0){
+                if (yIntcep == 0) {
+                String equation = ("y = " + "-" + rise + "/" + run + "x  ");
+                return equation;
+            } else if (yIntcep < 0) {
+                String equation = ("y = " + "-" + rise + "/" + run + "x" + yIntercept());
+                return equation;
             } else {
+                String equation = ("y = " + "-" + rise + "/" + run + "x" + " + " + yIntercept());
+                return equation;
+            }
+        } else {
                 if (yIntcep == 0) {
                     String equation = ("y = " + rise + "/" + run + "x  ");
                     return equation;
