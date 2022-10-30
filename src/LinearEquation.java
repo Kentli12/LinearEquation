@@ -48,9 +48,36 @@ public class LinearEquation {
     //declares and initializes variables used in the code
         int rise = y2 - y1;
         int run = x2 - x1;
+        int slope = rise / run;
         double yIntcep = yIntercept();
-    //determines if slope is 0 and returns the correct equation
-        if (rise / run == 0) {
+    //determine if slope is 1 and returns the correct equation
+        if ((slope == 1) || (slope == -1)) {
+            if (slope == 1) {
+                if (yIntcep == 0) {
+                    String equation = ("y = " + "x");
+                    return equation;
+                } else if (yIntcep < 0) {
+                    String equation = ("y = " + "x" + yIntcep);
+                    return equation;
+                } else {
+                    String equation = ("y = " + "x" + "+" + yIntcep);
+                    return equation;
+                }
+    //this part of th cde will run if the slope is -1
+            }else{
+                if (yIntcep == 0) {
+                    String equation = ("y = " + "-x");
+                    return equation;
+                } else if (yIntcep < 0) {
+                    String equation = ("y = " + "-x" + yIntcep);
+                    return equation;
+                } else {
+                    String equation = ("y = " + "-x" + "+" + yIntcep);
+                    return equation;
+                }
+            }
+            //determines if slope is 0 and returns the correct equation
+        } else if (slope == 0) {
             String equation = ("y = " + (int)yIntercept());
             return equation;
         } else {
