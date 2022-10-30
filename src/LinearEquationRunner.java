@@ -28,11 +28,20 @@ public class LinearEquationRunner {
         int y2 = Integer.parseInt(stringY2);
         System.out.println(" " + x2 + " " +y2);
 
-        LinearEquation equa1 = new LinearEquation(x1,y1,x2,y2);
-        System.out.println(equa1.distance());
-        System.out.println(equa1.slope());
-        System.out.println(equa1.yIntercept());
-        System.out.println(equa1.equation());
+        //runs the code
+        if (x2 == x1) {
+            System.out.println("\n" +"These points are on a vertical line: x = " + x1);
+        }
+        else {
+            LinearEquation linearEquation = new LinearEquation(x1, y1, x2, y2);
+            System.out.println(linearEquation.lineInfo());
+
+            System.out.print("\n" + "Enter a value for x: ");
+            double valueX = scan.nextDouble();
+            System.out.println(linearEquation.coordinateForX(valueX));
+        }
+
+
 
     }
 }

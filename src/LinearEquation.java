@@ -17,22 +17,23 @@ public class LinearEquation {
     }
 
     public double distance(){
-        double xDistance = (x2 - x1);
-        double yDistance = (y2 - y1);
-        double distance = Math.sqrt(Math.pow(xDistance, 2) + Math.pow(yDistance, 2));
-        return distance;
+        double xDistance = (double)(x2 - x1);
+        double yDistance = (double)(y2 - y1);
+        double squared = Math.pow(xDistance, 2) + Math.pow(yDistance, 2);
+        double distance = Math.sqrt(squared);
+        return roundedToHundredth(distance);
     }
     public double slope(){
-        double riseS = (y2 - y1);
-        double runS  = (x2 - x1);
+        double riseS = (double)(y2 - y1);
+        double runS  = (double)(x2 - x1);
         double slope = riseS/runS;
-        return slope;
+        return roundedToHundredth(slope);
     }
 
     public double yIntercept(){
         double x =  x2  * slope();
         double yIntercept = y2- x;
-        return yIntercept;
+        return roundedToHundredth(yIntercept);
     }
 
     public String equation() {
@@ -41,33 +42,60 @@ public class LinearEquation {
         double yIntcep = yIntercept();
         if (slope() % 1 == 0) {
             if (yIntcep == 0) {
-                String equation = ("y = " + slope() + "x  ");
+                String equation = ("y = " + (int) slope() + "x  ");
+                return equation;
+            } else if (yIntcep < 0) {
+                String equation = ("y = " + (int) slope() + "x" + yIntercept());
                 return equation;
             } else {
-                String equation = ("y = " + slope() + "x " + yIntercept());
+                String equation = ("y = " + (int) slope() + "x" + " + " + yIntercept());
                 return equation;
             }
         } else {
+            if (rise < 0 && run < 0) {
+                rise = Math.abs(rise);
+                run = Math.abs(run);
                 if (yIntcep == 0) {
                     String equation = ("y = " + rise + "/" + run + "x  ");
                     return equation;
+                } else if (yIntcep < 0) {
+                    String equation = ("y = " + rise + "/" + run + "x" + yIntercept());
+                    return equation;
                 } else {
-                    String equation = ("y = " + rise + "/" + run + "x " + yIntercept());
+                    String equation = ("y = " + rise + "/" + run + "x" + " + " + yIntercept());
                     return equation;
                 }
+            } else {
+                if (yIntcep == 0) {
+                    String equation = ("y = " + rise + "/" + run + "x  ");
+                    return equation;
+                } else if (yIntcep < 0) {
+                    String equation = ("y = " + rise + "/" + run + "x" + yIntercept());
+                    return equation;
+                } else {
+                    String equation = ("y = " + rise + "/" + run + "x" + " + " + yIntercept());
+                    return equation;
+                }
+
             }
         }
+    }
 
         public double roundedToHundredth(double toRound){
-            return(Math.round(toRound*100)/100);
+            return Math.round(toRound*100.0)/100.0;
         }
         public String lineInfo(){
-            return ("\n"+ "The two points are: (" + x1 + ", " + y1+ ") and (" + x2 + ", " + y2 + ")"
+            return   ("\n"+ "The two points are: (" + x1 + ", " + y1+ ") and (" + x2 + ", " + y2 + ")"
                     + "\n" + "The equation between these two points is: " + equation()
                     + "\n" + "The slope of this line is: " + slope()
-                    + "\n" + "The y-intercept of the line is: " + yIntercept());
+                    + "\n" + "The y-intercept of the line is: " + yIntercept()
+                    + "\n" + "The distance between the two points is " + distance());
         }
 
+        public String coordinateForX(double xvalue){
+            double y = roundedToHundredth(slope() * xvalue + yIntercept());
+            return ("These points are a vertical line is " + "(" + xvalue +", " + y + ")");
+        }
     }
 
 
