@@ -48,7 +48,7 @@ public class LinearEquation {
     //declares and initializes variables used in the code
         int rise = y2 - y1;
         int run = x2 - x1;
-        int slope = rise / run;
+        double slope = slope();
         double yIntcep = yIntercept();
     //determine if slope is 1 and returns the correct equation
         if ((slope == 1) || (slope == -1)) {
@@ -63,7 +63,7 @@ public class LinearEquation {
                     String equation = ("y = " + "x" + "+" + yIntcep);
                     return equation;
                 }
-    //this part of th cde will run if the slope is -1
+    //this part of the code will run if the slope is -1
             }else{
                 if (yIntcep == 0) {
                     String equation = ("y = " + "-x");
@@ -98,13 +98,13 @@ public class LinearEquation {
     //this part of the code will run if both the numerator and denominator are negative
                 if (rise < 0 && run < 0) {
                     if (yIntcep == 0) {
-                        String equation = ("y = " + rise + "/" + run + "x  ");
+                        String equation = ("y = " + Math.abs(rise) + "/" + Math.abs(run) + "x  ");
                         return equation;
                     } else if (yIntcep < 0) {
-                        String equation = ("y = " + rise + "/" + run + "x" + yIntercept());
+                        String equation = ("y = " + Math.abs(rise) + "/" + Math.abs(run) + "x" + yIntercept());
                         return equation;
                     } else {
-                        String equation = ("y = " + rise + "/" + run + "x" + " + " + yIntercept());
+                        String equation = ("y = " + Math.abs(rise) + "/" + Math.abs(run) + "x" + " + " + yIntercept());
                         return equation;
                     }
     //this part of the code will run, if either the numerator or denominator contains a negative
